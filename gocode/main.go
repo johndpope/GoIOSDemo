@@ -1,14 +1,8 @@
 package main
 
-/*
-// adjust LDFLAGS if necessary
-#cgo LDFLAGS: -Wl,-U,_iosmain
-extern void iosmain(int argc, char *argv[]);
-*/
 import "C"
 
 func main() {
-    C.iosmain(0, nil)
 }
 
 //export Add

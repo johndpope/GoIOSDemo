@@ -1,4 +1,6 @@
 libgo.a
+libgo_arm64.a
+libgo_armv7.a
 _obj/
 go_includes.h
 main

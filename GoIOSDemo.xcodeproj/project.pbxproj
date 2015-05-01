@@ -14,6 +14,7 @@
 		1AD8B5A21AF3D8D800E8C963 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AD8B5A11AF3D8D800E8C963 /* Images.xcassets */; };
 		1AD8B5A51AF3D8D800E8C963 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD8B5A31AF3D8D800E8C963 /* LaunchScreen.xib */; };
 		1AD8B5B11AF3D8D800E8C963 /* GoIOSDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD8B5B01AF3D8D800E8C963 /* GoIOSDemoTests.m */; };
+		1AD8B5BC1AF3F38C00E8C963 /* libgo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD8B5BB1AF3F38C00E8C963 /* libgo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		1AD8B5AA1AF3D8D800E8C963 /* GoIOSDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoIOSDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD8B5AF1AF3D8D800E8C963 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1AD8B5B01AF3D8D800E8C963 /* GoIOSDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoIOSDemoTests.m; sourceTree = "<group>"; };
+		1AD8B5BA1AF3F38500E8C963 /* go_includes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = go_includes.h; path = gocode/go_includes.h; sourceTree = SOURCE_ROOT; };
+		1AD8B5BB1AF3F38C00E8C963 /* libgo.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.objfile"; name = libgo.a; path = gocode/libgo.a; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD8B5BC1AF3F38C00E8C963 /* libgo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,8 @@
 		1AD8B5941AF3D8D800E8C963 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1AD8B5BB1AF3F38C00E8C963 /* libgo.a */,
+				1AD8B5BA1AF3F38500E8C963 /* go_includes.h */,
 				1AD8B5951AF3D8D800E8C963 /* Info.plist */,
 				1AD8B5961AF3D8D800E8C963 /* main.m */,
 			);
@@ -299,7 +305,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -337,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,6 +357,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoIOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gocode",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -361,6 +371,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GoIOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/gocode",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

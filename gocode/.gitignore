@@ -1,0 +1,4 @@
+libgo.a
+_obj/
+go_includes.h
+main
